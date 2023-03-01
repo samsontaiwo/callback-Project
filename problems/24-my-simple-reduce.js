@@ -36,6 +36,11 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function mySimpleReduce(array, cb) {
   // Your code here
+  let acc = array[0]
+  for(let i=1; i<array.length; i++){
+    acc = cb(acc, array[i], i, array)
+  }
+  return acc
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

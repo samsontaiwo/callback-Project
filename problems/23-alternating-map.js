@@ -37,6 +37,17 @@ console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper))
 
 function alternatingMap(array, cb1, cb2) {
   // Your code here
+  let ans = [];
+  let cur = cb1;
+  for(let i=0; i<array.length; i++){
+    ans.push(cur(array[i]));
+    if(cur == cb1){
+      cur = cb2
+    }else{
+      cur = cb1
+    }
+  }
+  return ans;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

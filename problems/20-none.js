@@ -30,6 +30,11 @@ console.log(result4);   // false
 
 function none(array, cb) {
   // Your code here
+  let result = [];
+  for(let i=0; i<array.length; i++){
+    result.push(cb(array[i], i, array));
+  };
+  return result.every((x)=> x === false);
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

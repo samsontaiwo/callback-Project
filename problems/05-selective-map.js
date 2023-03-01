@@ -44,6 +44,12 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function selectiveMap(array, selector, mapper) {
     // Your code here
+    for(let i=0; i<array.length; i++){
+        if(selector(array[i], i, array)){
+            array[i] = mapper(array[i], i, array)
+        }
+    }
+    return array;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

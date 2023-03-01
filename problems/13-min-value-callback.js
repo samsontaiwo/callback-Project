@@ -12,6 +12,11 @@ console.log(minValueCallback([64, 25, 49, 9, 100], Math.sqrt));  // 3
 
 function minValueCallback(array, cb) {
     // Your code here
+    if(!cb) return Math.min(...array)
+    array.forEach((element, i) => {
+      array[i] = cb(element, i)
+    });
+    return Math.min(...array)
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
